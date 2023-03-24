@@ -10,7 +10,7 @@ const Card = ({ value }) => {
   return (
     <div className="flex flex-col justify-start place-items-center ">
       <div className="relative h-72 shadow-lg">
-        {value.recommended == true ? (
+        {value?.recommended == true ? (
           <div className="absolute top-0 right-0 p-4">
             <div>
               <FontAwesomeIcon
@@ -24,17 +24,17 @@ const Card = ({ value }) => {
         )}
         <div className="absolute bottom-0 right-0 p-4">
           <div>
-            {Number.isInteger(value.price) && (
+            {Number.isInteger(value?.price) && (
               <p className="bg-gray-200  text-gray-600 p-[7px] py-1.5 m-1 text-base rounded-full">
-                {"$".repeat(value.price)}
+                {"$".repeat(value?.price)}
               </p>
             )}
           </div>
         </div>
         <div className="absolute bottom-0 p-4">
           <div>
-            {value.instagram != null ? (
-              <a target="_blank" href={value.instagram}>
+            {value?.instagram != null ? (
+              <a target="_blank" href={value?.instagram}>
                 <FontAwesomeIcon
                   icon={faInstagram}
                   className="bg-gray-200 hover:bg-gray-300 text-gray-600 hover:text-pink-500 p-2 mr-2 text-xl rounded-full"
@@ -43,8 +43,8 @@ const Card = ({ value }) => {
             ) : (
               <></>
             )}
-            {value.tiktok != null ? (
-              <a target="_blank" href={value.tiktok}>
+            {value?.tiktok != null ? (
+              <a target="_blank" href={value?.tiktok}>
                 <FontAwesomeIcon
                   icon={faTiktok}
                   className="bg-gray-200 hover:bg-gray-300 text-gray-600 hover:text-pink-500 p-2 text-xl rounded-full"
@@ -76,7 +76,7 @@ const Card = ({ value }) => {
         )}
       </div>
       <div className="p-2 text-center rounded-b-xl text-xl font-semibold">
-        <h1>{value.name || "Recipe Coming Soon"}</h1>
+        <h1>{value?.name || "Recipe Coming Soon"}</h1>
       </div>
     </div>
   );

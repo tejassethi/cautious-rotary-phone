@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 const client = createClient({
   projectId: process.env.PROJECT_ID,
   token: process.env.PROJECT_TOKEN,
+  apiVersion: "v2021-10-21",
   dataset: "production",
   useCdn: true,
 });
@@ -72,6 +73,7 @@ export default function Recipe({ recipe, category }) {
             </a>
             {categoryy.map((i, key) => (
               <a
+                key={key}
                 onClick={() => {
                   setSelected(i.name);
                   setRecipe(
