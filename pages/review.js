@@ -147,7 +147,10 @@ export default function Review({ review, cuisine, place }) {
               selectedPlace != "allPlace"
                 ? setRevieww(
                     review.filter(
-                      (item) => item.place && item.place.area == selectedPlace
+                      (item) =>
+                        item.place &&
+                        (item.place.area == selectedPlace ||
+                          item.place.city == selectedPlace)
                     )
                   )
                 : setRevieww(review);
