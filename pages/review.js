@@ -42,8 +42,6 @@ export const getServerSideProps = async () => {
 };
 
 export default function Review({ review, cuisine, place }) {
-  console.log(review);
-  console.log(place);
   function toCapitalCase(str) {
     if (typeof str == "string") {
       return str
@@ -165,7 +163,7 @@ export default function Review({ review, cuisine, place }) {
           </a>
           <div className="overflow-x-scroll">
             <div className="flex py-4">
-              {cuisine.map((i, key) => (
+              {[...new Set(cuisine)].map((i, key) => (
                 <a
                   key={key}
                   onClick={() => {

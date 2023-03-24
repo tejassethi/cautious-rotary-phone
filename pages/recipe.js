@@ -56,43 +56,45 @@ export default function Recipe({ recipe, category }) {
     <>
       <Navbar active="recipe" />
       <div className="container mx-auto mt-2 mb-5 px-4">
-        <div className="overflow-x-scroll mb-4">
-          <div className="flex py-4 ">
-            <a
-              onClick={() => {
-                setSelected("all");
-                setRecipe(recipe);
-              }}
-              className={`mr-4 cursor-pointer px-2 py-1 rounded-lg text-sm font-medium ${
-                selected != "all"
-                  ? "bg-white text-gray-800 hover:bg-pink-500"
-                  : "bg-pink-500 text-white hover:bg-pink-600"
-              } hover:text-white whitespace-nowrap`}
-            >
-              All
-            </a>
-            {categoryy.map((i, key) => (
-              <a
-                key={key}
-                onClick={() => {
-                  setSelected(i.name);
-                  setRecipe(
-                    recipe.filter((obj) => {
-                      return obj.categories.some(
-                        (category) => category && category.name === i.name
-                      );
-                    })
-                  );
-                }}
-                className={`mr-4 cursor-pointer px-2 py-1 rounded-lg text-sm font-medium ${
-                  selected != i.name
-                    ? "bg-white text-gray-800 hover:bg-pink-500"
-                    : "bg-pink-500 text-white hover:bg-pink-600"
-                } hover:text-white whitespace-nowrap`}
-              >
-                {i.name}
-              </a>
-            ))}
+        <div className="flex place-items-center ">
+          <a
+            onClick={() => {
+              setSelected("all");
+              setRecipe(recipe);
+            }}
+            className={`mr-4 cursor-pointer px-2 py-1 rounded-lg text-sm font-medium ${
+              selected != "all"
+                ? "bg-white text-gray-800 hover:bg-pink-500"
+                : "bg-pink-500 text-white hover:bg-pink-600"
+            } hover:text-white whitespace-nowrap`}
+          >
+            All
+          </a>
+          <div className="overflow-x-scroll">
+            <div className="flex py-4 ">
+              {categoryy.map((i, key) => (
+                <a
+                  key={key}
+                  onClick={() => {
+                    setSelected(i.name);
+                    setRecipe(
+                      recipe.filter((obj) => {
+                        return obj.categories.some(
+                          (category) => category && category.name === i.name
+                        );
+                      })
+                    );
+                  }}
+                  className={`mr-4 cursor-pointer px-2 py-1 rounded-lg text-sm font-medium ${
+                    selected != i.name
+                      ? "bg-white text-gray-800 hover:bg-pink-500"
+                      : "bg-pink-500 text-white hover:bg-pink-600"
+                  } hover:text-white whitespace-nowrap`}
+                >
+                  {i.name}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
         <div className="mb-4 text-lg">
