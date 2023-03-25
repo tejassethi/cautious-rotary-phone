@@ -18,75 +18,6 @@ const service = () => {
   return (
     <>
       <Navbar active="service" />
-      {/* <div className="relative container flex mx-auto mb-5 px-4 mt-10 xl:h-[calc(100vh-144px)] place-items-center justify-center">
-        <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-10">
-          <div className="flex flex-col col-span-2 xl:col-span-3 place-items-end">
-            <div className="w-80 h-80 xl:w-96 xl:h-96 bg-white shadow-2xl p-2 relative  cursor-pointer ">
-              <div className="text-center text-xl h-full flex justify-center place-items-center">
-                <div className="rounded-3xl bg-pink-500 text-white h-28 w-28 text-5xl flex justify-center place-items-center">
-                  <FontAwesomeIcon icon={faPhotoFilm} />
-                </div>
-              </div>
-              <h1 className=" text-centertext-center absolute text-3xl font-kalam m-auto left-0 right-0 bottom-10">
-                Master Eater Reviews
-              </h1>
-            </div>
-            <div className="h-3 w-80 xl:w-96 bg-pink-500"></div>
-          </div>
-          <div className="flex flex-col col-span-2 xl:col-span-3 place-items-start">
-            <div className="w-80 h-80 xl:w-96 xl:h-96 bg-white shadow-2xl p-2 relative  cursor-pointer ">
-              <div className="text-center text-xl h-full flex justify-center place-items-center">
-                <div className="rounded-3xl bg-pink-500 text-white h-28 w-28 text-5xl flex justify-center place-items-center">
-                  <FontAwesomeIcon icon={faReceipt} />
-                </div>
-              </div>
-              <h1 className=" text-centertext-center absolute text-3xl font-kalam m-auto left-0 right-0 bottom-10">
-                Recipe Development
-              </h1>
-            </div>{" "}
-            <div className="h-3 w-80 xl:w-96 bg-pink-500"></div>
-          </div>
-          <div className="flex flex-col col-span-2">
-            <div className="w-80 h-80 xl:w-96 xl:h-96 bg-white shadow-2xl p-2 relative  cursor-pointer ">
-              <div className="text-center text-xl h-full flex justify-center place-items-center">
-                <div className="rounded-3xl bg-pink-500 text-white h-28 w-28 text-5xl flex justify-center place-items-center">
-                  <FontAwesomeIcon icon={faChalkboardTeacher} />
-                </div>
-              </div>
-              <h1 className=" text-centertext-center absolute text-3xl font-kalam m-auto left-0 right-0 bottom-10">
-                Coaching
-              </h1>
-            </div>{" "}
-            <div className="h-3 w-80 xl:w-96 bg-pink-500"></div>
-          </div>
-          <div className="flex flex-col col-span-2">
-            <div className="w-80 h-80 xl:w-96 xl:h-96 bg-white shadow-2xl p-2 relative  cursor-pointer ">
-              <div className="text-center text-xl h-full flex justify-center place-items-center">
-                <div className="rounded-3xl bg-pink-500 text-white h-28 w-28 text-5xl flex justify-center place-items-center">
-                  <FontAwesomeIcon icon={faShareFromSquare} />
-                </div>
-              </div>
-              <h1 className=" text-centertext-center absolute text-3xl font-kalam m-auto left-0 right-0 bottom-10">
-                Social Media Handling
-              </h1>
-            </div>{" "}
-            <div className="h-3 w-80 xl:w-96 bg-pink-500"></div>
-          </div>
-          <div className="flex flex-col col-span-2 md:col-span-4 place-items-center xl:col-span-2">
-            <div className="w-80 h-80 xl:w-96 xl:h-96 bg-white shadow-2xl p-2 relative  cursor-pointer ">
-              <div className="text-center text-xl h-full flex justify-center place-items-center">
-                <div className="rounded-3xl bg-pink-500 text-white h-28 w-28 text-5xl flex justify-center place-items-center">
-                  <FontAwesomeIcon icon={faDiagramProject} />
-                </div>
-              </div>
-              <h1 className=" text-centertext-center absolute text-3xl font-kalam m-auto left-0 right-0 bottom-10">
-                Project Consultancy
-              </h1>
-            </div>{" "}
-            <div className="h-3 w-80 xl:w-96 bg-pink-500"></div>
-          </div>
-        </div>
-      </div> */}
       <div className="container flex mx-auto mb-5 px-4 mt-10">
         <div className="flex-col flex w-full ">
           <div className="flex flex-col lg:flex-row w-full place-items-center justify-center gap-5">
@@ -354,6 +285,88 @@ const service = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="container flex mx-auto mb-5 px-4 mt-10">
+        <section class=" w-full">
+          <hr className="border-2 " />
+          <div class="py-8 lg:py-16 px-4 mx-auto">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-pink-500 ">
+              Contact Me
+            </h2>
+            <p class="mb-8 lg:mb-16 font-light text-center text-gray-500  sm:text-xl">
+              Are you interested in any services or do you want to get in touch
+              with me?
+            </p>
+
+            <form action="#" class="space-y-8">
+              <div>
+                <label
+                  for="name"
+                  class="block mb-2 text-sm font-medium text-gray-900"
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 "
+                  placeholder="Full name"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block mb-2 text-sm font-medium text-gray-900 "
+                >
+                  Your email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 "
+                  placeholder="username@domain.com"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="subject"
+                  class="block mb-2 text-sm font-medium text-gray-900"
+                >
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 "
+                  placeholder="Let us know how we can help you"
+                  required
+                />
+              </div>
+              <div class="sm:col-span-2">
+                <label
+                  for="message"
+                  class="block mb-2 text-sm font-medium text-gray-900 "
+                >
+                  Your message
+                </label>
+                <textarea
+                  id="message"
+                  rows="6"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
+                  placeholder="Leave a comment..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="py-3 px-5 text-sm font-medium bg-pink-500 text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 "
+              >
+                Send message
+              </button>
+            </form>
+          </div>
+        </section>
       </div>
     </>
   );
