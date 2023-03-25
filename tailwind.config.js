@@ -10,7 +10,9 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      kalam: ["Kalam", "cursive"],
+    },
   },
   plugins: [],
 };
