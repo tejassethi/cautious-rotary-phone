@@ -12,6 +12,7 @@ module.exports = {
   theme: {
     fontFamily: {
       kalam: ["Kalam", "cursive"],
+      roboto: ["Roboto", "sans-serif"],
     },
   },
   plugins: [],

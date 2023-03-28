@@ -1,3 +1,5 @@
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { createClient } from "next-sanity";
 import React, { useEffect, useState } from "react";
 import Card from "./components/Card";
@@ -21,7 +23,7 @@ export const getServerSideProps = async () => {
     cover{
       asset->{url}
     }
-  }`;
+  } | order(_createdAt desc)`;
   const catquery = `*[_type == "category"]`;
   const recipe = await client.fetch(query);
   const category = await client.fetch(catquery);
@@ -47,6 +49,11 @@ export default function Recipe({ recipe, category }) {
   const [categoryy, setCategoryy] = useState([]);
   const [selected, setSelected] = useState("all");
 
+  function scrollToTop() {
+    if (!isBrowser()) return;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   useEffect(() => {
     setRecipe(recipe);
     setCategoryy(category);
@@ -55,6 +62,14 @@ export default function Recipe({ recipe, category }) {
   return (
     <>
       <Navbar active="recipe" />
+      <button
+        className="absolute bottom-0 right-0 p-10"
+        onClick={() => {
+          scrollToTop;
+        }}
+      >
+        <FontAwesomeIcon icon={faArrowUp} />
+      </button>
       <div className="container mx-auto mt-2 mb-5 px-4">
         <div className="flex place-items-center ">
           <a

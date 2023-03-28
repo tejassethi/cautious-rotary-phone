@@ -26,7 +26,7 @@ export const getServerSideProps = async () => {
     cover{
       asset->{url}
     }
-  }`;
+  } | order(_createdAt desc)`;
   const cuisinequery = `*[_type == "Cuisine"]{name}`;
   const placequery = `*[_type == "place"]{area, city}`;
   const review = await client.fetch(query);

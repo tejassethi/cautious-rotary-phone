@@ -1,14 +1,23 @@
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
 const Navbar = (active) => {
   const [nav, setNav] = useState(false);
+  const mypic = require("../assets/logo2.svg");
   return (
     <div className="h-16">
       <nav className="bg-white shadow-lg fixed z-50 left-0 right-0 top-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
+              <Image
+                src={mypic}
+                width={40}
+                height={40}
+                alt="Profile Picture"
+                className="mr-3"
+              />
               <Link
                 href="/"
                 className="text-2xl font-bold text-pink-500 hover:text-pink-600"
