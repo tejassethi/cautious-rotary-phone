@@ -1,5 +1,3 @@
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { createClient } from "next-sanity";
 import Image from "next/image";
 import Link from "next/link";
@@ -44,14 +42,14 @@ export const getServerSideProps = async () => {
   };
 };
 
-const index = ({ recipe, review }) => {
+const Index = ({ recipe, review }) => {
   const mypic = require("./assets/pp.jpeg");
   const didi = require("./assets/didi.jpeg");
   const mainpic = require("./assets/image1.jpeg");
   const mainpic2 = require("./assets/image2.jpeg");
 
   return (
-    <div>
+    <div className="bg-[#FDF3F8]">
       <Navbar active="home" />
       <div className="bg-[#FDF3F8] min-h-screen">
         <div className="container px-5 md:px-0 mx-auto grid grid-cols-12 pt-10 md:pt-32 2xl:pt-10 pb-10">
@@ -185,4 +183,4 @@ const index = ({ recipe, review }) => {
   );
 };
 
-export default index;
+export default Index;
