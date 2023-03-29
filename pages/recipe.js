@@ -53,11 +53,6 @@ export default function Recipe({ recipe, category }) {
     document.getElementById("nav-top").scrollIntoView({ behavior: "smooth" });
   }
 
-  useEffect(() => {
-    setRecipe(recipe);
-    setCategoryy(category);
-  }, []);
-
   return (
     <div className="relative">
       <Navbar active="recipe" />
