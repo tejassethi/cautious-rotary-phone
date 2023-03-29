@@ -1,3 +1,5 @@
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { createClient } from "next-sanity";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,11 +45,14 @@ export const getServerSideProps = async () => {
 };
 
 const Index = ({ recipe, review }) => {
-  const mypic = require("./assets/pp.jpeg");
+  const mypic = require("./assets/didi2.jpeg");
   const didi = require("./assets/didi.jpeg");
   const mainpic = require("./assets/image1.jpeg");
   const mainpic2 = require("./assets/image2.jpeg");
 
+  function scrollToTop() {
+    document.getElementById("nav-top").scrollIntoView({ behavior: "smooth" });
+  }
   return (
     <div className="bg-[#FDF3F8]">
       <Navbar active="home" />
@@ -179,6 +184,14 @@ const Index = ({ recipe, review }) => {
           </div>
         </div>
       </div>
+      <button
+        className="sticky bottom-5 left-full p-5 mr-5 bg-pink-500 rounded-full w-5 h-5 flex justify-center place-items-center"
+        onClick={() => {
+          scrollToTop();
+        }}
+      >
+        <FontAwesomeIcon icon={faArrowUp} className="text-white" />
+      </button>
     </div>
   );
 };

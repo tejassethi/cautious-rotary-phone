@@ -50,8 +50,7 @@ export default function Recipe({ recipe, category }) {
   const [selected, setSelected] = useState("all");
 
   function scrollToTop() {
-    if (!isBrowser()) return;
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    document.getElementById("nav-top").scrollIntoView({ behavior: "smooth" });
   }
 
   useEffect(() => {
@@ -60,16 +59,8 @@ export default function Recipe({ recipe, category }) {
   }, []);
 
   return (
-    <>
+    <div className="relative">
       <Navbar active="recipe" />
-      <button
-        className="absolute bottom-0 right-0 p-10"
-        onClick={() => {
-          scrollToTop;
-        }}
-      >
-        <FontAwesomeIcon icon={faArrowUp} />
-      </button>
       <div className="container mx-auto mt-2 mb-5 px-4">
         <div className="flex place-items-center ">
           <a
@@ -126,6 +117,14 @@ export default function Recipe({ recipe, category }) {
           ))}
         </div>
       </div>
-    </>
+      <button
+        className="sticky bottom-5 left-full p-5 mr-5 bg-pink-500 rounded-full w-5 h-5 flex justify-center place-items-center"
+        onClick={() => {
+          scrollToTop();
+        }}
+      >
+        <FontAwesomeIcon icon={faArrowUp} className="text-white" />
+      </button>
+    </div>
   );
 }

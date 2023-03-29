@@ -1,6 +1,7 @@
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
 
 import {
+  faArrowUp,
   faChalkboardTeacher,
   faDiagramProject,
   faPhotoFilm,
@@ -12,6 +13,10 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 
 const Service = () => {
+  function scrollToTop() {
+    document.getElementById("nav-top").scrollIntoView({ behavior: "smooth" });
+  }
+
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -417,6 +422,14 @@ const Service = () => {
           </div>
         </section>
       </div>
+      <button
+        className="sticky bottom-5 left-full p-5 mr-5 bg-pink-500 rounded-full w-5 h-5 flex justify-center place-items-center"
+        onClick={() => {
+          scrollToTop();
+        }}
+      >
+        <FontAwesomeIcon icon={faArrowUp} className="text-white" />
+      </button>
     </>
   );
 };

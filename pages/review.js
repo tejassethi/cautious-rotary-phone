@@ -1,5 +1,9 @@
 import { faTiktok } from "@fortawesome/free-brands-svg-icons";
-import { faDollar, faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowUp,
+  faDollar,
+  faDollarSign,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { createClient } from "next-sanity";
 import React, { useEffect, useState } from "react";
@@ -42,6 +46,9 @@ export const getServerSideProps = async () => {
 };
 
 export default function Review({ review, cuisine, place }) {
+  function scrollToTop() {
+    document.getElementById("nav-top").scrollIntoView({ behavior: "smooth" });
+  }
   function toCapitalCase(str) {
     if (typeof str == "string") {
       return str
@@ -590,6 +597,14 @@ export default function Review({ review, cuisine, place }) {
           ))}
         </div>
       </div>
+      <button
+        className="sticky bottom-5 left-full p-5 mr-5 bg-pink-500 rounded-full w-5 h-5 flex justify-center place-items-center"
+        onClick={() => {
+          scrollToTop();
+        }}
+      >
+        <FontAwesomeIcon icon={faArrowUp} className="text-white" />
+      </button>
     </>
   );
 }
