@@ -180,7 +180,7 @@ const Index = ({ recipe, review }) => {
                   recipes and tips with you!`}
                 </h3>
                 <Link
-                  href="/recipe"
+                  href="/about"
                   className="mt-5 text-center xl:text-left font-roboto text-xl font-bold  whitespace-nowrap text-pink-500"
                 >
                   More About Me →

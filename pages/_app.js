@@ -1,5 +1,6 @@
 import "./globals.css";
 import NextNProgress from "nextjs-progressbar";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -11,6 +12,7 @@ export default function App({ Component, pageProps }) {
         height={5}
         showOnShallow={true}
       />
+      <GoogleAnalytics trackPageViews />
       <Component {...pageProps} />
     </>
   );
