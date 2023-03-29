@@ -45,8 +45,8 @@ export default function Recipe({ recipe, category }) {
       })
       .join(" ");
   }
-  const [recipee, setRecipe] = useState([]);
-  const [categoryy, setCategoryy] = useState([]);
+  const [recipee, setRecipe] = useState(recipe);
+  const [categoryy, setCategoryy] = useState(category);
   const [selected, setSelected] = useState("all");
 
   function scrollToTop() {

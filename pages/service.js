@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 
-const service = () => {
+const Service = () => {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -421,4 +421,4 @@ const service = () => {
   );
 };
 
-export default service;
+export default Service;

@@ -66,12 +66,12 @@ const index = ({ recipe, review }) => {
               </h1>
 
               <p className="text-xl font-kalam">
-                Welcome to Master Eater, the home of culinary inspiration and
+                {`Welcome to Master Eater, the home of culinary inspiration and
                 gastronomic adventures. Join me on a journey around the world,
                 exploring the most delectable dishes and discovering hidden gems
                 in the restaurant scene. From easy-to-follow recipes to
                 restaurant reviews, you'll find everything you need to become a
-                Master Eater. Let's eat!
+                Master Eater. Let's eat!`}
               </p>
             </div>
           </div>
@@ -167,14 +167,14 @@ const index = ({ recipe, review }) => {
                   <span className="text-pink-500"> Keerat</span> Sethi
                 </h1>
                 <h3 className="text-xl font-kalam text-center pt-5">
-                  Hi there! I'm a food blogger with a passion for all things
+                  {`Hi there! I'm a food blogger with a passion for all things
                   culinary. I'm always on the lookout for new and exciting
                   recipes to try, from classic dishes to fusion cuisine. Whether
                   it's a savory meal or a sweet treat, I love to experiment with
                   flavors and techniques to create delicious dishes that are
                   both tasty and visually appealing. Join me on my culinary
                   journey as I explore the world of food and share my favorite
-                  recipes and tips with you!
+                  recipes and tips with you!`}
                 </h3>
               </div>
             </div>
