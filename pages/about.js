@@ -39,7 +39,7 @@ const about = () => {
             marketing, handle social media accounts for brands, organize food
             events, provide consultancy to start up companies, create travel
             content and much more! I showcase my raw lifestyle with no
-            unrealistic (something)! I hope you can benefit from my platform. So
+            unrealistic expectations! I hope you can benefit from my platform. So
             let’s get to know my experiences, services, inspiration and future
             plans a little more.`}
               </h2>
