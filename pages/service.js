@@ -1,3 +1,4 @@
+import { useForm, ValidationError } from "@formspree/react";
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
 
 import {
@@ -10,49 +11,31 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import Index from "./index";
 import Navbar from "./components/Navbar";
+import { useRouter } from "next/router";
 
 const Service = () => {
   function scrollToTop() {
     document.getElementById("nav-top").scrollIntoView({ behavior: "smooth" });
   }
-
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const sendform = () => {
-    const msg = {
-      fullname: fullname,
-      email: email,
-      subject: subject,
-      message: message,
-    };
-    // fetch("/api/contact", {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json, text/plain, */*",
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(msg),
-    // }).then((res) => {
-    //   console.log("Response received");
-    //   if (res.status === 200) {
-    //     console.log("Response succeeded!");
-    //     setSubmitted(true);
-    //     setFullname("");
-    //     setSubject("");
-    //     setEmail("");
-    //     setMessage("");
-    //   }
-    // });
-  };
+  const [state, handleSubmit] = useForm("mayzdvrv");
+  const router = useRouter();
+  if (state.succeeded) {
+    router.push("/");
+  }
 
   return (
-    <>
+    <div className="bg-[#F3F4F2]">
       <Navbar active="service" />
+      <h1 className="text-4xl md:text-5xl pt-10 text-center text-gray-700 font-roboto font-extrabold">
+        E-Business <br className="xl:hidden" />
+        <span className="font-kalam">Solutions</span>
+      </h1>
       <div className="container flex mx-auto mb-5 px-4 mt-10">
         <div className="flex-col flex w-full ">
           <div className="flex flex-col lg:flex-row w-full place-items-center justify-center gap-5">
@@ -333,7 +316,7 @@ const Service = () => {
               with me?
             </p>
 
-            <form className="space-y-8">
+            <form className="space-y-8" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
@@ -344,10 +327,7 @@ const Service = () => {
                 <input
                   type="text"
                   id="name"
-                  value={fullname}
-                  onChange={(e) => {
-                    setFullname(e.target.value);
-                  }}
+                  name="name"
                   className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 "
                   placeholder="Full name"
                   required
@@ -363,10 +343,7 @@ const Service = () => {
                 <input
                   type="email"
                   id="email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
+                  name="email"
                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 "
                   placeholder="username@domain.com"
                   required
@@ -382,10 +359,7 @@ const Service = () => {
                 <input
                   type="text"
                   id="subject"
-                  value={subject}
-                  onChange={(e) => {
-                    setSubject(e.target.value);
-                  }}
+                  name="subject"
                   className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 "
                   placeholder="Let us know how we can help you"
                   required
@@ -400,24 +374,19 @@ const Service = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows="6"
-                  value={message}
-                  onChange={(e) => {
-                    setMessage(e.target.value);
-                  }}
                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
                   placeholder="Leave a comment..."
                 ></textarea>
               </div>
-              <a
-                onClick={() => {
-                  sendform();
-                }}
+              <button
                 type="submit"
-                className="py-3 px-5 text-sm font-medium bg-pink-500 text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 "
+                disabled={state.submitting}
+                className="py-3 cursor-pointer px-5 text-sm font-medium bg-pink-500 text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 "
               >
                 Send message
-              </a>
+              </button>
             </form>
           </div>
         </section>
@@ -430,7 +399,7 @@ const Service = () => {
       >
         <FontAwesomeIcon icon={faArrowUp} className="text-white" />
       </button>
-    </>
+    </div>
   );
 };
 

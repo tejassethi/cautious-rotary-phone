@@ -97,6 +97,7 @@ export default function Recipe({ recipe, category }) {
               ))}
             </div>
           </div>
+          <div className="bg-black w-10 h-full"></div>
         </div>
         <div className="mb-4 text-lg">
           {selected != "all" && (

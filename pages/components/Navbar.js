@@ -11,17 +11,17 @@ const Navbar = (active) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <Image
-                src={mypic}
-                width={40}
-                height={40}
-                alt="Profile Picture"
-                className="mr-3"
-              />
               <Link
                 href="/"
-                className="text-2xl font-bold text-pink-500 hover:text-pink-600"
+                className="text-2xl flex place-items-center justify-center font-bold text-pink-500 hover:text-pink-600"
               >
+                <Image
+                  src={mypic}
+                  width={40}
+                  height={40}
+                  alt="Profile Picture"
+                  className="mr-3"
+                />
                 Master Eater
               </Link>
               <div className="hidden md:block ml-4">
@@ -36,6 +36,16 @@ const Navbar = (active) => {
                   Home
                 </Link>
                 <Link
+                  href="/about"
+                  className={`${
+                    active.active == "about"
+                      ? " text-pink-500"
+                      : "text-gray-600 hover:text-pink-500"
+                  } px-3 py-2 rounded-md text-sm font-medium`}
+                >
+                  About Me
+                </Link>
+                <Link
                   href="/recipe"
                   className={`${
                     active.active == "recipe"
@@ -43,7 +53,7 @@ const Navbar = (active) => {
                       : "text-gray-600 hover:text-pink-500"
                   } px-3 py-2 rounded-md text-sm font-medium`}
                 >
-                  Recipe
+                  Recipes
                 </Link>
                 <Link
                   href="/review"
@@ -53,7 +63,7 @@ const Navbar = (active) => {
                       : "text-gray-600 hover:text-pink-500"
                   } px-3 py-2 rounded-md text-sm font-medium`}
                 >
-                  Review
+                  Reviews
                 </Link>
                 <Link
                   href="/service"
@@ -63,7 +73,7 @@ const Navbar = (active) => {
                       : "text-gray-600 hover:text-pink-500"
                   } px-3 py-2 rounded-md text-sm font-medium`}
                 >
-                  Service
+                  Services
                 </Link>
               </div>
             </div>
@@ -123,22 +133,28 @@ const Navbar = (active) => {
                 Home
               </Link>
               <Link
+                href="/about"
+                className="text-gray-600 hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium"
+              >
+                About Me
+              </Link>
+              <Link
                 href="/recipe"
                 className="text-gray-600 hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium"
               >
-                Recipe
+                Recipes
               </Link>
               <Link
                 href="/review"
                 className="text-gray-600 hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium"
               >
-                Review
+                Reviews
               </Link>
               <Link
                 href="/service"
                 className="text-gray-600 hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium"
               >
-                Service
+                Services
               </Link>
             </div>
             <div className="pt-4 pb-3 border-t border-gray-200">

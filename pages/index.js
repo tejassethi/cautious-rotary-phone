@@ -179,6 +179,12 @@ const Index = ({ recipe, review }) => {
                   journey as I explore the world of food and share my favorite
                   recipes and tips with you!`}
                 </h3>
+                <Link
+                  href="/recipe"
+                  className="mt-5 text-center xl:text-left font-roboto text-xl font-bold  whitespace-nowrap text-pink-500"
+                >
+                  More About Me →
+                </Link>
               </div>
             </div>
           </div>
