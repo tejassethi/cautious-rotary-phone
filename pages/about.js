@@ -236,7 +236,7 @@ const about = () => {
                 </div>
                 <div className="bg-gray-500 col-start-3 col-end-11 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
                   <h3 className="font-semibold text-lg mb-1">
-                    {`I started coaching startup restaurants on how to use social media to their advance`}
+                    {`I started coaching startup restaurants/companies on digital marketing.`}
                   </h3>
                   <p className="leading-tight text-justify w-full font-kalam">
                     November 2022
