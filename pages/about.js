@@ -1,3 +1,4 @@
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +7,9 @@ import Navbar from "./components/Navbar";
 
 const about = () => {
   const didi = require("./assets/didi.jpeg");
-
+  function scrollToTop() {
+    document.getElementById("nav-top").scrollIntoView({ behavior: "smooth" });
+  }
   return (
     <div className="bg-[#F3F4F2] min-h-screen ">
       <Navbar active="about" />
@@ -445,6 +448,14 @@ const about = () => {
           </h2>
         </div>
       </div>
+      <button
+        className="sticky bottom-5 left-full p-5 mr-5 bg-pink-500 rounded-full w-5 h-5 flex justify-center place-items-center"
+        onClick={() => {
+          scrollToTop();
+        }}
+      >
+        <FontAwesomeIcon icon={faArrowUp} className="text-white" />
+      </button>
     </div>
   );
 };
